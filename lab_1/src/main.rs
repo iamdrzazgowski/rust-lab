@@ -42,5 +42,23 @@ fn main() {
 
     // Zadanie 5
     
+    let first_hh = 15;
+    let first_mm = 43;
+    let first_ss = 54;
+
+    let second_hh = 11;
+    let second_mm = 23;
+    let second_ss = 54;
+
+    let first_seconds = first_hh * 3600 + first_mm * 60 + first_ss;
+    let second_seconds = second_hh * 3600 + second_mm * 60 + second_ss;
+
+    let difference = first_seconds - second_seconds;
+
+    let diff_hh = difference / 3600;
+    let diff_mm = (difference % 3600) / 60;
+    let diff_ss = (difference % 3600) % 60;
+
+    println!("Różnica czasu to {}:{}:{}", diff_hh, diff_mm, diff_ss);
 
 }
