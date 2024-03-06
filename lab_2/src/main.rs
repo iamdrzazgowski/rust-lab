@@ -24,4 +24,5 @@ fn main() {
     }
 
     println!("Suma cyfr to {}", sum);
+    
 }
