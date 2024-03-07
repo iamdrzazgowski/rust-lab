@@ -13,13 +13,17 @@ fn suma_cyfr(n: usize) -> usize {
     let mut num = n;
 
     let mut sum = 0;
-    
+
+
+    println!("Cyfry liczby {} to:", n);
     while num != 0 {
         
-        // println!("{}", num % 10);
+        print!("{} ", num % 10);
         sum += num % 10;
         num /= 10;
     }
+
+    print!("\n");
 
     return sum;
 }
