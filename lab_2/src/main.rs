@@ -65,7 +65,7 @@ fn main() {
 
     // Zadanie 5 (Metoda Newtona)
 
-    println!("\nZadanie 5 (Metoda Newtona)"); // Do zrobienia na następne zajęcia
+    println!("\nZadanie 5 (Metoda Newtona)"); // Do zrobienia na następne zajęcia wymyślić (a,b, epsilon i delta)
 
     
 }
