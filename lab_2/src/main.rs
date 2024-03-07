@@ -1,4 +1,3 @@
-
 fn silnia(n :usize) -> usize {
     let mut silnia = 1;
 
@@ -15,7 +14,7 @@ fn suma_cyfr(n: usize) -> usize {
     let mut sum = 0;
 
 
-    println!("Cyfry liczby {} to:", n);
+    print!("Cyfry liczby {} to: ", n);
     while num != 0 {
         
         print!("{} ", num % 10);
@@ -43,23 +42,30 @@ fn pitagoras(max_number: usize){
 fn main() {
     
     
-    println!("Zadanie 1 (Silnia)"); // Zadanie 1 (Silnia)
+    // Zadanie 1 (Silnia)
+    println!("Zadanie 1 (Silnia)"); 
 
     let n = 5;
     println!("Silnia z {} to {} \n", n, silnia(n));
 
-    println!("Zadanie 2 i 3 (Suma cyfr)"); // Zadanie 2 i 3 (Suma cyfr)
+    // Zadanie 2 i 3 (Suma cyfr)
+    println!("Zadanie 2 i 3 (Suma cyfr)");
 
     let number = 134;
 
     println!("Suma cyfr z liczby {} to {} \n", number, suma_cyfr(number));
 
+    
     // Zadanie 4 (trójki pitagorejskie) 0 < a < b < c.
-
     println!("Zadanie 4 (trójki pitagorejskie)");
 
     let max_number = 10;
 
     pitagoras(max_number);
+
+    // Zadanie 5 (Metoda Newtona)
+
+    println!("\nZadanie 5 (Metoda Newtona)"); // Do zrobienia na następne zajęcia
+
     
 }
