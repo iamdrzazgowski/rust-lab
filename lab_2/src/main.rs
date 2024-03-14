@@ -71,6 +71,7 @@ fn newton(n: u64) -> f64{
         let f_val = f(x);
         let deriv_sng = sgn_f_deriv(x);
 
+        println!("Iteracja: {}", _i+1);
         println!("f = {}", f_val);
         println!("f' = {}", deriv_sng);
         println!("x = {}", x);
