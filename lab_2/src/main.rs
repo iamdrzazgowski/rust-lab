@@ -39,6 +39,62 @@ fn pitagoras(max_number: usize){
     }
 }
 
+// Metoda Newtona funkcje
+
+fn f(x: f64) -> f64 {
+    3.0 * x - 9.0
+}
+
+fn signum(x: f64) -> i8{
+    let epsilon = 0.0000001;
+    if x.abs() < epsilon {
+        0
+    }else if x > epsilon{
+        1
+    }else {
+        -1
+    }
+}
+
+fn sgn_f_deriv(x: f64) -> i8 {
+    let epsilon = 0.0000001;
+    let d = f(x + epsilon) - f(x);
+    signum(d)
+}
+
+fn newton(n: u64) -> f64{
+    let mut x = 7.0;
+    let mut delta = 1.0;
+
+    let mut prvs_jump_left = false;
+    for _i in 0..n{
+        let f_val = f(x);
+        let deriv_sng = sgn_f_deriv(x);
+
+        println!("f = {}", f_val);
+        println!("f' = {}", deriv_sng);
+        println!("x = {}", x);
+        println!("delta = {} \n", delta);
+
+        let mut jump_left: bool = false;
+
+        if (signum(f_val) > 0 && deriv_sng < 0) || (signum(f_val) < 0 && deriv_sng > 0){
+            x += delta;
+        }else{
+            x -= delta;
+            jump_left = true;
+        }
+
+        if jump_left != prvs_jump_left{
+            delta /= 2.0;
+        }
+
+        prvs_jump_left = jump_left;
+    }
+
+    x
+}
+
 fn main() {
     
     
@@ -67,5 +123,6 @@ fn main() {
 
     println!("\nZadanie 5 (Metoda Newtona)"); // Do zrobienia na następne zajęcia wymyślić (a,b, epsilon i delta)
 
+    newton(1000);
     
 }
