@@ -124,6 +124,6 @@ fn main() {
 
     println!("\nZadanie 5 (Metoda Newtona)"); // Do zrobienia na następne zajęcia wymyślić (a,b, epsilon i delta)
 
-    newton(1000);
+    newton(10);
     
 }
