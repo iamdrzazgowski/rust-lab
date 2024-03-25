@@ -10,6 +10,7 @@ fn rand(seed: u64, min: u64, max: u64) -> u64 {
 }
 
 fn main() {
+    
     let seed = 45;
     let min = 0;
     let max = 1000;
