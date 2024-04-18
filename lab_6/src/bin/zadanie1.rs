@@ -4,6 +4,7 @@ fn fraction(numerator: i32, denominator: i32) -> Option<f32> {
 
     if denominator != 0{
         Some(numerator_f / denominator_f)
+        
     }else{
         None
     }
