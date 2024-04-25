@@ -12,9 +12,11 @@ fn unikalne(vect: Vec<u32>) -> Vec<u32>{
 }
 
 fn no_occurences(v: &Vec<u32>, e: u32) -> usize {
-    let wektor: Vec<u32> = v.iter().filter(|x| **x == e).map(|x| *x).collect();
+    // let wektor: Vec<u32> = v.iter().filter(|x| **x == e).map(|x| *x).collect();
 
-    wektor.len()
+    // wektor.len()
+
+    v.iter().filter(|x| **x == e).count()
 }
 
 fn unikalne_lepiej(v: Vec<u32>) -> Vec<u32> {
