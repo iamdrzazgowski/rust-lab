@@ -11,23 +11,21 @@ fn unikalne(vect: Vec<u32>) -> Vec<u32>{
     out
 }
 
+fn no_occurences(v: &Vec<u32>, e: u32) -> usize {
+    let wektor: Vec<u32> = v.iter().filter(|x| **x == e).map(|x| *x).collect();
+
+    wektor.len()
+}
+
 fn unikalne_lepiej(v: Vec<u32>) -> Vec<u32> {
-    let mut out = Vec::new();
-    
-    for i in 0..v.len() {
-        let mut counter = 0;
+    let mut out: Vec<u32> = Vec::new();
 
-        for j in 0..v.len(){
-            if v[i] == v[j] {
-                counter += 1;
-            }
-        }
-
-        if counter - 1 == 0 {
-            out.push(v[i]);
+    for element in &v {
+        if no_occurences(&v, *element) == 1{
+            out.push(*element);
         }
     }
-
+    
     out
 }
 
