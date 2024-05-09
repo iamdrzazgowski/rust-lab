@@ -85,6 +85,8 @@ fn main() {
     let mut czarny1 = Rgb::black();
     println!("{:?}", czarny1);
     let czarny2 = Rgb::from_3u8(0, 0, 0);
+
+    
     println!("{:?}", czarny2);
     println!("{} {}", szary1 == szary2, szary1 == szary3);
     println!("{} {}", bialy1 == bialy2, czarny1 == czarny2);
