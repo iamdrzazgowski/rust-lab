@@ -28,11 +28,6 @@ impl Process {
     }
 
     fn from_script(script: &str) -> Vec<Process>{
-        // "echo mleko | toilet & ls;"
-        // p1 - echo mleko
-        // p2 - toilet
-        // p3 - ls
-
         script.to_string().split(|c: char| ['|', '&', ';'].contains(&c)).filter(|s| s.len() > 0).map(|s| Self::from_command(s)).collect()
 
         // let command: Vec<&str> = script.split(|x| {x == '|' || x == '&' || x == ';'}).collect();
