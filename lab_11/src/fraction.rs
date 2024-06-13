@@ -82,7 +82,22 @@ impl TryFrom<f32> for Fraction {
     type Error = String;
 
     fn try_from(a: f32) -> Result<Self, String> {
-          
+        let s = a.to_string();
+        println!("{}", s);
+        let parts: Vec<&str> = s.split('.').collect();
+        if parts.len() != 2 {
+            return Err("NaN".to_string());
+        }
+
+        let p = parts[1].len() as u32;
+        let d0: u32 = parts[0].to_string().parse::<u32>().unwrap();
+        let d1: u32 = parts[1].to_string().parse::<u32>().unwrap();
+
+        let f1: Fraction = p.into();
+        let f2: Fraction = Fraction::from((d1, u32::pow(10, p)));
+        
+        Ok(f1 + f2)
+
     }
 }
 
